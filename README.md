@@ -1,4 +1,4 @@
-# SynthWave.AI_initial-beta  
+# SynthWave.AI
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
@@ -14,10 +14,8 @@
 
 ## Overview
 
-**SynthWave.AI_initial-beta** is an AI-powered website generator built using **Next.js** and **TypeScript**.  
+**SynthWave.AI** is an AI-powered website generator built using **Next.js** and **TypeScript**.  
 It enables users to generate website layouts and content using AI-driven prompts, streamlining the web creation process.
-
-This project represents the **initial beta release**, focused on experimenting with AI capabilities, UI flow, and performance.
 
 ---
 
@@ -27,7 +25,6 @@ This project represents the **initial beta release**, focused on experimenting w
 - ⚡ Built with Next.js & TypeScript  
 - 🎨 Styled using Tailwind CSS  
 - 🌐 Deployed on Vercel  
-- 🧪 Beta version — actively evolving  
 - 🧩 Modular and scalable architecture  
 
 ---
