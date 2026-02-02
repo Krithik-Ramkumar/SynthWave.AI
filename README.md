@@ -47,12 +47,14 @@ This project represents the **initial beta release**, focused on experimenting w
 ```bash
 git clone https://github.com/Krithik-Ramkumar/SynthWave.AI_initial-beta.git
 cd SynthWave.AI_initial-beta
+```
 
 ---
 
 ### 2. Install dependencies
 ```bash
 npm install
+```
 
 ---
 
@@ -60,12 +62,14 @@ npm install
 Create a .env file in the root directory:
 ```bash
 NEXT_PUBLIC_API_KEY=your_api_key_here
+```
 
 ---
 
 ### 4. Run the development server
 ```bash
 npm run dev
+```
 
 Open http://localhost:3000 in your browser.
 
