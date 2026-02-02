@@ -41,43 +41,37 @@ This project represents the **initial beta release**, focused on experimenting w
 
 ---
 
-## Project Structure
-/
-├── src/
-│ ├── app/ # Application routes
-│ ├── components/ # Reusable UI components
-│ └── styles/ # Global styles
-├── public/ # Static assets
-├── .env # Environment variables
-├── next.config.ts # Next.js config
-├── tailwind.config.ts # Tailwind config
-├── tsconfig.json # TypeScript config
-├── package.json # Dependencies & scripts
-└── README.md # Documentation
-
----
-
 ## Installation & Setup
 
 ### 1. Clone the repository
 ```bash
-    git clone https://github.com/Krithik-Ramkumar/SynthWave.AI_initial-beta.git
-    cd SynthWave.AI_initial-beta
+git clone https://github.com/Krithik-Ramkumar/SynthWave.AI_initial-beta.git
+cd SynthWave.AI_initial-beta
 
-2. Install dependencies
-    npm install
+---
 
-3. Environment variables
+### 2. Install dependencies
+```bash
+npm install
+
+---
+
+### 3. Environment variables
 Create a .env file in the root directory:
+```bash
+NEXT_PUBLIC_API_KEY=your_api_key_here
 
-    NEXT_PUBLIC_API_KEY=your_api_key_here
+---
 
-4. Run the development server
-    npm run dev
+### 4. Run the development server
+```bash
+npm run dev
 
 Open http://localhost:3000 in your browser.
 
-Usage
+---
+
+## Usage
 
     Open the app in your browser
 
@@ -87,7 +81,9 @@ Usage
 
     Experiment with AI-powered web creation
 
-Deployment
+---
+
+## Deployment
 
     This project is optimized for Vercel.
 
@@ -101,14 +97,20 @@ Deployment
 
         Deploy
 
-Beta Disclaimer
+---
+
+## Beta Disclaimer
 
     This is an early beta release.
     Features may change, and bugs are expected.
 
     Feedback is highly appreciated.
 
-Author
+---
+
+## Author
 
     Krithik Ramkumar
     GitHub: https://github.com/Krithik-Ramkumar
+
+---
