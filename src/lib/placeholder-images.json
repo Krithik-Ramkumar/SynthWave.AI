@@ -1,0 +1,32 @@
+{
+  "placeholderImages": [
+    {
+      "id": "template-portfolio",
+      "name": "Portfolio",
+      "description": "A modern portfolio template.",
+      "imageUrl": "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwb3J0Zm9saW8lMjB3ZWJzaXRlfGVufDB8fHx8MTc2NDY5ODY0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "portfolio website"
+    },
+    {
+      "id": "template-startup",
+      "name": "Startup",
+      "description": "A sleek landing page for startups.",
+      "imageUrl": "https://images.unsplash.com/photo-1510924014959-7e1849088bfe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdGFydHVwJTIwbGFuZGluZ3xlbnwwfHx8fDE3NjQ3ODYwNjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "startup landing"
+    },
+    {
+      "id": "template-blog",
+      "name": "Blog",
+      "description": "A clean and minimal blog template.",
+      "imageUrl": "https://images.unsplash.com/photo-1516763449302-78450e5a507d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxibG9nJTIwbWluaW1hbGlzdHxlbnwwfHx8fDE3NjQ3ODYwNjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blog minimalist"
+    },
+    {
+      "id": "template-ecommerce",
+      "name": "E-commerce",
+      "description": "A stylish product page for e-commerce.",
+      "imageUrl": "https://images.unsplash.com/photo-1691096673900-014e7ff94636?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlY29tbWVyY2UlMjBwcm9kdWN0fGVufDB8fHx8MTc2NDc4NjA2MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ecommerce product"
+    }
+  ]
+}
