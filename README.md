@@ -8,7 +8,7 @@
 
 **AI Website Generator — First Beta**
 
-🔗 Live Demo: https://synth-wave-ai-initial-beta.vercel.app/
+🔗 Live Demo: https://synth-wave-ai.vercel.app/
 
 ---
 
