@@ -42,8 +42,8 @@ It enables users to generate website layouts and content using AI-driven prompts
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/Krithik-Ramkumar/SynthWave.AI_initial-beta.git
-cd SynthWave.AI_initial-beta
+git clone https://github.com/Krithik-Ramkumar/SynthWave.AI.git
+cd SynthWave.AI
 ```
 
 ---
@@ -58,7 +58,7 @@ npm install
 ### 3. Environment variables
 Create a .env file in the root directory:
 ```bash
-NEXT_PUBLIC_API_KEY=your_api_key_here
+GROQ_API_KEY=your_api_key_here
 ```
 
 ---
