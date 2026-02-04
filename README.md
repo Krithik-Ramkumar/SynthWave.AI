@@ -22,7 +22,7 @@ It enables users to generate website layouts and content using AI-driven prompts
 ## Features
 
 - 🤖 AI-based website generation  
-- ⚡ Built with Next.js & TypeScript  
+- ⚡ Built with Next.js, React.js, TypeScript  
 - 🎨 Styled using Tailwind CSS  
 - 🌐 Deployed on Vercel  
 - 🧩 Modular and scalable architecture  
