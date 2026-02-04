@@ -1,7 +1,8 @@
 # SynthWave.AI
 
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React.js](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Beta-yellow?style=for-the-badge)
@@ -14,7 +15,7 @@
 
 ## Overview
 
-**SynthWave.AI** is an AI-powered website generator built using **Next.js** and **TypeScript**.  
+**SynthWave.AI** is an AI-powered website generator built using **Next.js**, **React.js** and **TypeScript**.  
 It enables users to generate website layouts and content using AI-driven prompts, streamlining the web creation process.
 
 ---
