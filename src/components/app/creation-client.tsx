@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { Code, Eye, Download, Clipboard } from 'lucide-react';
+import Link from 'next/link';
+import { Code, Eye, Download, Clipboard, Home } from 'lucide-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Button } from '../ui/button';
@@ -55,9 +56,16 @@ const loadingTexts = [
   'Generating your website... and a sentient AI. Oops.',
 ];
 
-function LoadingState() {
+function LoadingState({
+  generationDone,
+  onComplete,
+}: {
+  generationDone: boolean;
+  onComplete: () => void;
+}) {
   const [progress, setProgress] = useState(0);
   const [text, setText] = useState(loadingTexts[0]);
+  const completionTriggered = useRef(false);
 
   useEffect(() => {
     const textInterval = setInterval(() => {
@@ -67,27 +75,37 @@ function LoadingState() {
       });
     }, 2500);
 
-    const progressInterval = setInterval(() => {
-      setProgress(prev => {
-        if (prev >= 95) {
-          // Stay at 95% until generation is actually done
-          return 95;
-        }
-        // Start faster, then slow down
-        const increment = prev < 50 ? Math.random() * 5 : prev < 80 ? Math.random() * 2 : Math.random() * 1;
-        const newProgress = Math.min(prev + increment, 95);
-        return newProgress;
-      });
-    }, 400); // Slower interval for a more realistic feel
-
     return () => {
       clearInterval(textInterval);
-      clearInterval(progressInterval);
     };
   }, []);
 
+  useEffect(() => {
+    const progressInterval = setInterval(() => {
+      setProgress(prev => {
+        if (generationDone) {
+          const next = Math.min(prev + Math.max(1, (100 - prev) * 0.18), 100);
+          if (next >= 100 && !completionTriggered.current) {
+            completionTriggered.current = true;
+            setTimeout(onComplete, 450);
+          }
+          return next;
+        }
+        if (prev >= 90) {
+          return 90;
+        }
+        const increment = prev < 50 ? Math.random() * 5 : prev < 80 ? Math.random() * 2 : Math.random() * 1;
+        return Math.min(prev + increment, 90);
+      });
+    }, 200);
+
+    return () => {
+      clearInterval(progressInterval);
+    };
+  }, [generationDone, onComplete]);
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground animate-in fade-in-0 zoom-in-95 duration-500">
       <div className="w-full max-w-md text-center">
         <div className="h-24 flex items-center justify-center mb-4 px-4">
             <p className="text-lg text-muted-foreground">{text}</p>
@@ -104,6 +122,7 @@ function CreationClientInternal() {
   
   const [html, setHtml] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(true);
+  const [showResult, setShowResult] = useState(false);
   const [activeView, setActiveView] = useState<'preview' | 'code'>('preview');
 
   const { toast } = useToast();
@@ -113,6 +132,7 @@ function CreationClientInternal() {
     async function generate() {
       if (!prompt) return;
       setIsGenerating(true);
+      setShowResult(false);
       try {
         const response = await fetch('/api/generate', {
           method: 'POST',
@@ -159,8 +179,14 @@ function CreationClientInternal() {
     generate();
   }, [prompt, toast]);
 
-  if (isGenerating) {
-    return <LoadingState />;
+  if (!showResult) {
+    return (
+      <LoadingState
+        key={prompt}
+        generationDone={!isGenerating}
+        onComplete={() => setShowResult(true)}
+      />
+    );
   }
 
   const handleDownload = () => {
@@ -192,7 +218,7 @@ function CreationClientInternal() {
   const currentCode = html || `No code generated yet.`;
 
   return (
-    <div className="flex flex-col h-screen max-h-screen bg-black text-white w-full">
+    <div className="flex flex-col h-screen max-h-screen bg-black text-white w-full animate-in fade-in-0 zoom-in-95 duration-500">
         <div className="flex-shrink-0 flex items-center justify-between p-4 border-b border-primary/20">
           <div className="flex items-center gap-2">
              <Button 
@@ -216,6 +242,12 @@ function CreationClientInternal() {
           </div>
 
           <div className="flex items-center gap-4">
+            <Button variant="outline" size="sm" asChild>
+              <Link href="/">
+                <Home className="w-4 h-4 mr-2" />
+                Home
+              </Link>
+            </Button>
              <Button variant="outline" size="sm" onClick={() => copy(currentCode)} disabled={!currentCode || activeView !== 'code'}>
               <Clipboard className="w-4 h-4 mr-2" />
               Copy Code
