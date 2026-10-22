@@ -6,6 +6,9 @@ import { Toaster } from "@/components/ui/toaster";
 export const metadata: Metadata = {
   title: 'SynthWave.AI',
   description: 'AI-powered website generator that takes user input and generates a functional website with downloadable code.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
